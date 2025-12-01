@@ -194,9 +194,9 @@ maxFilesToCache 128k [nsdserver]
 ### 7. Fileset
 #### 7-1) Create Fileset 
 ```
-mmcrfileset gpfs fset1 --inode-space new
+mmcrfileset gpfs fset1 --inode-space new        //독립된 fest1 fileset 생성 
 
-mmlsfileset gpfs
+mmlsfileset gpfs        //gpfs Fileset확인
 
 Filesets in file system &apos;gpfs&apos;:
 Name                     Status    Path                                    
@@ -205,7 +205,7 @@ fset1                    Unlinked  --
 ```
 
 ```
-mmlinkfileset gpfs fset1 -J /gpfs/fest1
+mmlinkfileset gpfs fset1 -J /gpfs/fest1        //Fileset을 경로에 연결(Link) 
 
 mmlsfileset gpfs
 
@@ -221,7 +221,7 @@ mmlssnapshot gpfs -j fest1
 
 mmcrsnapshot gpfs fest1            // Snapshot 생성
 
-mmlssnapshot gpfs
+mmlssnapshot gpfs        //gpfs에 있는 snapshot list 확인
 
 Snapshots in file system gpfs:
 Directory                SnapId    Status  Created                   ExpirationTime            Fileset
